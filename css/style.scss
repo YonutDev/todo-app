@@ -1,0 +1,222 @@
+body {
+    background-color: hsl(0, 0%, 91%);
+    background-image: url('../img/bg-desktop-light.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+}
+
+.header {
+    margin-top: 4rem;
+
+    display:flex;
+    justify-content: center;
+
+    h1 {
+        font-family: "Josefin Sans";
+        font-weight: 700;
+        letter-spacing: 10px;
+        color: hsl(0, 0%, 98%);
+    }
+    img {
+        cursor: pointer;
+        padding-top: 1.2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.add-todo {
+    display:flex;
+    justify-content: center;
+
+    input {
+        background-color: #ffffff;
+        width: 30rem;
+        padding: 20px 10px 20px 10px;
+
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+
+        font-family: "Josefin Sans";
+        font-weight: 400;
+        font-size: 18px;
+        color: #97969b;
+
+        &:focus {
+            color: hsl(235, 19%, 35%);
+        }
+    }
+}
+
+.todos {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 2rem;
+}
+
+.todos-list {
+    background-color: #fff;
+    width: 30rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+.todo + .todo {
+    border-top: 1px solid hsl(236, 33%, 92%);
+}
+.todo {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    label {
+        margin-left: .2rem;
+        font-family: "Josefin Sans";
+        font-weight: 400;
+        font-size: 18px;
+        color: hsl(235, 19%, 35%);
+    }
+    input[type=radio] {
+        vertical-align: -.55rem;
+        -webkit-appearance: none;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #97969b;
+        border-radius: 50%;
+        background: #f8f7f7;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        &:checked {
+            border: 0;
+            background: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+        
+        &::before{
+            content: '';
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            pointer-events: none;
+            background-image: url('../img/icon-check.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: none;
+        }
+
+        &:checked::before{
+            display: block;
+        }
+    }
+    img {
+        float:right;
+        margin-right: .2rem;
+        margin-top: .5rem;
+        cursor: pointer;
+        display: none;
+    }
+}
+
+.todo-footer {
+    background: #fff;
+}
+
+.todo-items-left {
+    float: left;
+    display:inline-block;
+    font-family: "Josefin Sans";
+    font-weight: 400;
+    font-size: 15px;
+    color: hsl(236, 9%, 61%);
+}
+
+.todo-filters {
+    background-color: #ffffff;
+    max-width: 30rem;
+    padding: 20px 10px 20px 10px;
+
+    border-radius: 5px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Josefin Sans";
+    font-weight: 700;
+    font-size: 16px;
+
+    margin: auto;
+}
+
+.todo-filter-all, .todo-filter-active, .todo-filter-completed {
+    display:inline-block;
+    margin-right: .5rem;
+    color: hsl(236, 9%, 61%);
+    text-decoration: none;
+    transition: .1s;
+    &:hover {
+        color: hsl(235, 19%, 35%);
+    }
+}
+
+.todo-clear-completed {
+    float: right;
+    display:inline-block;
+    font-family: "Josefin Sans";
+    font-weight: 400;
+    font-size: 15px;
+    color: hsl(236, 9%, 61%);
+    transition: .1s;
+    &:hover {
+        color: hsl(235, 19%, 35%);
+    }
+}
+
+.todo-clear-completed {
+    cursor: pointer;
+}
+
+// Let's make it responsive! ;)
+@media only screen and (max-width: 500px) {
+    // Change bg image for mobile
+    body {
+        background-image: url('../img/bg-mobile-light.jpg');
+        height: 200px;
+    }
+    .header {
+        padding-top: 5rem;
+        h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            float:left;
+            text-align: left;
+        }
+        img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            float:right;
+            text-align: right;
+        }
+    }
+    .todo {
+        img {
+            display: block;
+        }
+    }
+}
+@media only screen and (min-width: 500px) {
+    .header {
+        h1 + img {
+            margin-left: 21rem;
+        }
+    }
+}
