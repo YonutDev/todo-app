@@ -1,0 +1,57 @@
+body {
+  background-color: hsl(235deg, 21%, 11%);
+  background-image: url("../img/bg-desktop-dark.jpg");
+}
+
+.add-todo input {
+  background-color: hsl(235deg, 24%, 19%);
+  color: hsl(236deg, 33%, 92%);
+}
+.add-todo input:focus {
+  color: hsl(234deg, 39%, 85%);
+}
+
+.todos-list {
+  background-color: hsl(235deg, 24%, 19%);
+}
+
+.todo + .todo {
+  border-top: 1px solid hsl(237deg, 14%, 26%);
+}
+
+.todo label {
+  color: hsl(234deg, 39%, 85%);
+}
+.todo input[type=radio] {
+  border: 1px solid hsl(237deg, 14%, 26%);
+  background: hsl(235deg, 24%, 19%);
+}
+
+.todo-items-left {
+  color: hsl(233deg, 14%, 35%);
+}
+
+.todo-clear-completed {
+  color: hsl(233deg, 14%, 35%);
+}
+.todo-clear-completed:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+
+.todo-filters {
+  background-color: hsl(235deg, 24%, 19%);
+}
+
+.todo-filter-all, .todo-filter-active, .todo-filter-completed {
+  color: hsl(233deg, 14%, 35%);
+}
+.todo-filter-all:hover, .todo-filter-active:hover, .todo-filter-completed:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: url("../img/bg-mobile-dark.jpg");
+    height: 200px;
+  }
+}/*# sourceMappingURL=dark.css.map */
