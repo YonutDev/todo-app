@@ -1,0 +1,54 @@
+body {
+    background-color: hsl(235, 21%, 11%);
+    background-image: url('../img/bg-desktop-dark.jpg');
+}
+.add-todo {
+    input {
+        background-color: hsl(235, 24%, 19%);
+        color: hsl(236, 33%, 92%);
+
+        &:focus {
+            color: hsl(234, 39%, 85%);
+        }
+    }
+}
+.todos-list {
+    background-color: hsl(235, 24%, 19%);
+}
+.todo + .todo {
+    border-top: 1px solid hsl(237, 14%, 26%);
+}
+.todo { 
+    label {
+        color: hsl(234, 39%, 85%);
+    }
+    input[type=radio] {
+        border: 1px solid hsl(237, 14%, 26%);
+        background: hsl(235, 24%, 19%);
+    }
+}
+.todo-items-left {
+    color: hsl(233, 14%, 35%);
+}
+.todo-clear-completed {
+    color: hsl(233, 14%, 35%);
+    &:hover {
+        color: hsl(236, 33%, 92%);
+    }
+}
+.todo-filters {
+    background-color: hsl(235, 24%, 19%);
+}
+.todo-filter-all, .todo-filter-active, .todo-filter-completed {
+    color: hsl(233, 14%, 35%);
+    &:hover {
+        color: hsl(236, 33%, 92%);
+    }
+}
+@media only screen and (max-width: 500px) {
+    // Change bg image for mobile
+    body {
+        background-image: url('../img/bg-mobile-dark.jpg');
+        height: 200px;
+    }
+}
