@@ -54,46 +54,46 @@ if (isset($_GET['filter'])) {
         <div class="add-todo">
             <input type="text" placeholder="Create a new todo..." name="create-todo" id="create-todo">
         </div>
-        <br><br>
-        <?php if (isset($_COOKIE['TODOS']) && $_COOKIE['TODOS'] !== '{}') { /* Check if user have todos */ ?>
-            <!-- Todo list -->
-            <div class="todos">
-                <div class="todos-list">
-                    <?php 
-                    $todos = json_decode($_COOKIE['TODOS'], TRUE); // Get data from cookie that is in json format
-                    $todos_count = 0; // This variable is used to count todos, that will help us at elements ids, elements ids will help us in JavaScript to know what's the todo for the user action :)
-                    $todos_shown = 0; // Some todos are not shown because they are disabled (deleted by user). $todos_count is including and disabled todos
-                    foreach($todos as $todo) { 
-                        $todos_count++;
-                        if ($todo['disabled'] === true) continue; // If todo is disabled, skip it
-                        else if (isset($filter)) {
-                            if ($filter === 'active') {
-                                if($todo['completed'] === true) continue; // If filter is set to get only active todos and the todo is completed, skip it
-                            }
-                            else if ($filter === 'completed') {
-                                if($todo['completed'] === false) continue;  // If filter is set to get only complete todos and the todo is not completed, skip it
-                            }
-                        } 
-                        $todos_shown++;
-                        if ($todos_count > 0 && $todos_shown > 0) { ?>
-                            <div class="todo" id="todo-<?php echo $todos_count; ?>">
-                                <input type="radio" <?php if ($todo['completed'] === true) echo 'checked'; ?> id="todo-complete-<?php echo $todos_count; ?>">
-                                <label <?php if ($todo['completed'] === true) { if ($color_mode === 'DARK') echo 'style="color: hsl(233, 14%, 35%); text-decoration: line-through;"'; else echo 'style="color: hsl(236, 9%, 61%); text-decoration: line-through;"'; } ?>><?php echo htmlentities($todo['name']); ?></label>
-                                <img src="img/icon-cross.svg" class="todo-delete" id="todo-delete-<?php echo $todos_count; ?>" alt="X">
-                            </div> 
-                        <?php }
-                    }
-                    if ($todos_count > 0 && $todos_shown > 0) { ?>
-                        <!-- Todo footer -->
-                        <div class="todo-footer">
-                            <p class="todo-items-left">... items left</p>
-                            <p class="todo-clear-completed" id="todo-clear-completed">Clear Completed</p>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-        <?php } ?>
     </form>
+    <br><br>
+    <?php if (isset($_COOKIE['TODOS']) && $_COOKIE['TODOS'] !== '{}') { /* Check if user have todos */ ?>
+        <!-- Todo list -->
+        <div class="todos">
+            <div class="todos-list">
+                <?php 
+                $todos = json_decode($_COOKIE['TODOS'], TRUE); // Get data from cookie that is in json format
+                $todos_count = 0; // This variable is used to count todos, that will help us at elements ids, elements ids will help us in JavaScript to know what's the todo for the user action :)
+                $todos_shown = 0; // Some todos are not shown because they are disabled (deleted by user). $todos_count is including and disabled todos
+                foreach($todos as $todo) { 
+                    $todos_count++;
+                    if ($todo['disabled'] === true) continue; // If todo is disabled, skip it
+                    else if (isset($filter)) {
+                        if ($filter === 'active') {
+                            if($todo['completed'] === true) continue; // If filter is set to get only active todos and the todo is completed, skip it
+                        }
+                        else if ($filter === 'completed') {
+                            if($todo['completed'] === false) continue;  // If filter is set to get only complete todos and the todo is not completed, skip it
+                        }
+                    } 
+                    $todos_shown++;
+                    if ($todos_count > 0 && $todos_shown > 0) { ?>
+                        <div class="todo" id="todo-<?php echo $todos_count; ?>">
+                            <input type="radio" <?php if ($todo['completed'] === true) echo 'checked'; ?> id="todo-complete-<?php echo $todos_count; ?>">
+                            <label <?php if ($todo['completed'] === true) { if ($color_mode === 'DARK') echo 'style="color: hsl(233, 14%, 35%); text-decoration: line-through;"'; else echo 'style="color: hsl(236, 9%, 61%); text-decoration: line-through;"'; } ?>><?php echo htmlentities($todo['name']); ?></label>
+                            <img src="img/icon-cross.svg" class="todo-delete" id="todo-delete-<?php echo $todos_count; ?>" alt="X">
+                        </div> 
+                    <?php }
+                }
+                if ($todos_count > 0 && $todos_shown > 0) { ?>
+                    <!-- Todo footer -->
+                    <div class="todo-footer">
+                        <p class="todo-items-left">... items left</p>
+                        <p class="todo-clear-completed" id="todo-clear-completed">Clear Completed</p>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    <?php } ?>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
