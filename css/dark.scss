@@ -25,7 +25,20 @@ body {
     input[type=radio] {
         border: 1px solid hsl(237, 14%, 26%);
         background: hsl(235, 24%, 19%);
+
+        &:hover {
+            background-image: linear-gradient(hsl(235, 24%, 19%), hsl(235, 24%, 19%)),
+                              linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+
+        &:checked {
+            border: 0;
+            background: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
     }
+}
+.todo-footer {
+    border-top: 1px solid hsl(237, 14%, 26%);
 }
 .todo-items-left {
     color: hsl(233, 14%, 35%);
