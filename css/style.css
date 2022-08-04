@@ -76,6 +76,8 @@ body {
   font-size: 18px;
   color: hsl(235deg, 19%, 35%);
   word-wrap: break-word;
+  max-width: 25rem;
+  display: inline-block;
 }
 .todo input[type=radio] {
   vertical-align: -0.55rem;
@@ -205,6 +207,9 @@ body {
   }
   .todos-list {
     width: calc(100% - 1rem);
+  }
+  .todo label {
+    max-width: calc(100% - 5rem);
   }
   .todo img {
     display: block;
