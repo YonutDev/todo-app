@@ -62,7 +62,7 @@ body {
 
 .todos-list {
     background-color: #fff;
-    width: 30rem;
+    max-width: 30rem;
     padding: 10px;
     border-radius: 5px;
 }
@@ -196,7 +196,7 @@ body {
 }
 
 // Let's make it responsive! ;)
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 530px) {
     // Change bg image for mobile
     body {
         background-image: url('../img/bg-mobile-light.jpg');
@@ -219,13 +219,16 @@ body {
             text-align: right;
         }
     }
+    .todos-list {
+        max-width: calc(100% - 1rem);
+    }
     .todo {
         img {
             display: block;
         }
     }
 }
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 530px) {
     .header {
         h1 + img {
             margin-left: 21rem;
