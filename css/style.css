@@ -55,7 +55,7 @@ body {
 
 .todos-list {
   background-color: #fff;
-  max-width: 30rem;
+  width: 30rem;
   padding: 10px;
   border-radius: 5px;
 }
@@ -204,7 +204,7 @@ body {
     text-align: right;
   }
   .todos-list {
-    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
   }
   .todo img {
     display: block;
