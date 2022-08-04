@@ -91,6 +91,15 @@ body {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         cursor: pointer;
 
+        &:hover {
+            border: double 1px transparent;
+            border-radius: 50%;
+            background-image: linear-gradient(white, white),
+                              linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+
         &:checked {
             border: 0;
             background: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -125,6 +134,7 @@ body {
 }
 
 .todo-footer {
+    border-top: 1px solid hsl(236, 33%, 92%);
     background: #fff;
 }
 
