@@ -72,12 +72,14 @@ body {
 .todo {
     padding-bottom: 10px;
     padding-top: 10px;
+    max-width: 30rem;
     label {
         margin-left: .2rem;
         font-family: "Josefin Sans";
         font-weight: 400;
         font-size: 18px;
         color: hsl(235, 19%, 35%);
+        word-wrap:break-word;
     }
     input[type=radio] {
         vertical-align: -.55rem;
